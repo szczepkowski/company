@@ -47,6 +47,7 @@ public class EmployeeRepositoryDefault implements EmployeeRepo {
 
     @Override
     public boolean delete(String pesel) {
+
         return employeeList.remove(this.get(pesel));
     }
 

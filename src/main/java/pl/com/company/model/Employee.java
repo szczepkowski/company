@@ -2,9 +2,14 @@ package pl.com.company.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Employee {
+
+    private UUID id;
 
     private String firstName;
     private String lastName;
@@ -16,6 +21,7 @@ public class Employee {
 
 
     public Employee(String firstName, String lastName, String pesel, BigDecimal salary) {
+        this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
@@ -23,6 +29,10 @@ public class Employee {
 
         this.createAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getFirstName() {
