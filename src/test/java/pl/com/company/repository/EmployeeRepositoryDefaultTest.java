@@ -53,6 +53,16 @@ public class EmployeeRepositoryDefaultTest {
     }
 
     @Test
+    void create2() {
+
+        assertEquals(employee.getFirstName(), FIRST_NAME_TEST);
+        assertEquals(employee.getLastName(), LAST_NAME_TEST);
+        assertEquals(employee.getSalary(), SALARY_TEST);
+
+        employee.toString();
+    }
+
+    @Test
     void create2SamePesel() {
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
